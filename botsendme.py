@@ -1,7 +1,5 @@
 """Bot send me."""
 
-import sys
-# print(sys.path)
 from flask import Flask, abort, request, jsonify
 import requests
 
@@ -20,7 +18,7 @@ def sendmessage(message):
         "disable_notifcation": True,
         "parse_mode": "HTML"
     }
-    r = requests.post(tg + "/sendMessage", json=data)
+    requests.post(tg + "/sendMessage", json=data)
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -29,15 +27,16 @@ def botsendme():
     if request.method == 'GET':
         try:
             sendmessage(request.args['message'])
-        except:
+        except Exception:
             abort(400)
     else:
         try:
             sendmessage(request.get_json()['message'])
-        except:
+        except Exception:
             abort(400)
     return jsonify({"message": "message sent"})
 
 
 if __name__ == '__main__':
     app.run()
+
