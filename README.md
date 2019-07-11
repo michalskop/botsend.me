@@ -9,7 +9,7 @@ Rename `example_settings.py` to `settings.py` and set the correct values in it.
 
 ## Example POST
 ```
-POST botsend.me
+POST https://botsend.me
 ```
 with data
 ```json
@@ -19,5 +19,5 @@ with data
 ```
 ## Example GET
 ```
-GET botsend.me?message=Hi.
+GET https://botsend.me?message=Hi.
 ```
