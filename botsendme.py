@@ -13,10 +13,10 @@ def sendmessage(message):
     tg = "https://api.telegram.org/bot" + settings.token
     data = {
         "chat_id": settings.chat_id,
-        "text": message,
-        "disable_web_page_preview": True,
-        "disable_notifcation": True,
-        "parse_mode": "HTML"
+        "text": message
+        # "disable_web_page_preview": "true",
+        # "disable_notification": True,
+        # "parse_mode": "HTML"
     }
     requests.post(tg + "/sendMessage", json=data)
 
