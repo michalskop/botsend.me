@@ -12,3 +12,4 @@ db/backup/
 db/pg_backup.config
 letsencrypt*
 *.pyc
+/venv
